@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+      - name: Setup ⚙️
+        uses: ./.github/actions/setup-node
+      - name: Typecheck 🔎
+        run: pnpm run typecheck
+      - name: Lint 🧹
+        run: pnpm run lint
+      - name: Format check 🎨
+        run: pnpm run format:check
+      - name: Unit tests 🧪
+        run: pnpm run test --coverage
+      - name: E2E tests 🧪
+        run: pnpm run test:e2e
+      - name: OpenAPI check 📄
+        run: pnpm run openapi:check
+      - name: Build 🏗️
+        run: pnpm run build

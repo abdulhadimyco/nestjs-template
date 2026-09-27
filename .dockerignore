@@ -1,0 +1,8 @@
+*
+!package.json
+!pnpm-lock.yaml
+!tsconfig*.json
+!.swcrc
+!nest-cli.json
+!src
+!.husky
