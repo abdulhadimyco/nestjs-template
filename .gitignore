@@ -4,7 +4,6 @@ dist/
 .idea
 .env*
 !.env.example
-!.env.test
 coverage/
 .npm
 .vscode

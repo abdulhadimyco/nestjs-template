@@ -27,8 +27,8 @@
     "check:deps": "knip",
     "gate": "pnpm run typecheck && pnpm run lint && pnpm run format:check && pnpm run test && pnpm run test:e2e && pnpm run openapi:check && pnpm run build",
     "prepare": "node .husky/install.mjs",
-    "openapi:generate": "node --env-file=.env.test -r ts-node/register -r tsconfig-paths/register scripts/generate-openapi.ts",
-    "openapi:check": "node --env-file=.env.test -r ts-node/register -r tsconfig-paths/register scripts/generate-openapi.ts --check",
+    "openapi:generate": "node -r ts-node/register -r tsconfig-paths/register scripts/generate-openapi.ts",
+    "openapi:check": "node -r ts-node/register -r tsconfig-paths/register scripts/generate-openapi.ts --check",
     "start:prod": "node dist/main.js"
   },
   "dependencies": {

@@ -1,3 +1,4 @@
+// Test environment values live in code, not in a committed env file.
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 
@@ -6,6 +7,8 @@ import type { OpenAPIObject } from "@nestjs/swagger";
 import { buildOpenApiDocument } from "@/common/openapi/openapi.setup";
 
 import { createTestApp } from "../test/create-test-app";
+
+import "../test/setup-env";
 
 const OUTPUT_PATH = path.join(process.cwd(), "openapi.json");
 const PACKAGE_JSON_PATH = path.join(process.cwd(), "package.json");
